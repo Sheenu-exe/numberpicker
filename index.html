@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="box">
+        <main>
+            <p>The number is:</p>
+        <h1 id="number"><Span id="span" class="animate__animated animate__bounceIn"></Span></h1>
+        </main>
+        <div>
+            <button id="btn">Pick a number</button>
+        </div>
+    </div>
+
+
+<script>
+    var numberHead = document.getElementById("number")
+    var btn = document.getElementById("btn")
+
+    btn.addEventListener("click",()=>{
+        var Spann = document.getElementById("span")
+        numberHead.removeChild(Spann)
+        var Span = document.createElement("span")
+        Span.innerText=Math.floor(Math.random()*1000 || Math.random()*100) + 1 || 2
+        Span.classList="animate__animated animate__bounceIn"
+        Span.id="span"
+        numberHead.appendChild(Span)
+        
+    })
+</script>
+</body>
+</html>
