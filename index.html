@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="box">
+        <div class="fieldbox">
+            <button class="select" id="ten">1-10</button>
+            <button class="select" id="hundred">1-100</button>
+            <button class="select" id="thousand">1-1000</button>
+        </div>
+        <div class="custom">
+            <br>
+            <input id="desired" type="number" placeholder="Enter your desired number">
+            <button id="enter">Enter</button>
+        </div>
+        <main>
+            <p>The number is:</p>
+        <h1 id="number"><Span id="span" class="animate__animated animate__bounceIn"></Span></h1>
+        </main>
+        <div>
+            <button id="btn">Pick a number</button>
+        </div>
+    </div>
+
+
+<script>
+    var numberHead = document.getElementById("number")
+    var btn = document.getElementById("btn")
+    var Ten = document.getElementById("ten")
+    var Hundred = document.getElementById("hundred")
+    var Thousand = document.getElementById("thousand")
+    var Desired = document.getElementById("desired")
+    var enter = document.getElementById("enter")
+
+    btn.addEventListener("click",()=>{
+        var Spann = document.getElementById("span")
+        numberHead.removeChild(Spann)
+        var Span = document.createElement("span")
+        Span.innerText=Math.floor(Math.random()*100 ) + 1 
+        Span.classList="animate__animated animate__bounceIn"
+        Span.id="span"
+        numberHead.appendChild(Span)
+    })
+    
+    Ten.addEventListener("click",()=>{
+        
+        btn.addEventListener("click",()=>{
+        var Spann = document.getElementById("span")
+        numberHead.removeChild(Spann)
+        var Span = document.createElement("span")
+        Span.innerText=Math.floor(Math.random()*10 ) + 1 
+        Span.classList="animate__animated animate__bounceIn"
+        Span.id="span"
+        numberHead.appendChild(Span)
+    })
+    })
+    Hundred.addEventListener("click",()=>{
+        btn.addEventListener("click",()=>{
+        var Spann = document.getElementById("span")
+        numberHead.removeChild(Spann)
+        var Span = document.createElement("span")
+        Span.innerText=Math.floor(Math.random()*100 ) + 1 
+        Span.classList="animate__animated animate__bounceIn"
+        Span.id="span"
+        numberHead.appendChild(Span)
+    })
+    })
+    Thousand.addEventListener("click",()=>{
+        btn.addEventListener("click",()=>{
+        var Spann = document.getElementById("span")
+        numberHead.removeChild(Spann)
+        var Span = document.createElement("span")
+        Span.innerText=Math.floor(Math.random()*1000 ) + 1 
+        Span.classList="animate__animated animate__bounceIn"
+        Span.id="span"
+        numberHead.appendChild(Span)
+    })
+    })
+    enter.addEventListener("click",()=>{
+        btn.addEventListener("click",()=>{
+        var Spann = document.getElementById("span")
+        numberHead.removeChild(Spann)
+        var Span = document.createElement("span")
+        Span.innerText=Math.floor(Math.random() * Desired.value ) + 1 
+        Span.classList="animate__animated animate__bounceIn"
+        Span.id="span"
+        numberHead.appendChild(Span)
+    })
+    })
+    
+
+</script>
+</body>
+</html>
